@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, Box, Upload, LogOut, Menu, X, User, ShoppingCart } from "lucide-react";
-import { useUser, useClerk } from "@clerk/clerk-react";
 import DashboardNavbar from "./DashboardNavbar";
 import piLogo from "../assets/pi_global_logo.jpeg";
 
 const Layout = ({ children }) => {
-  const { user } = useUser();
-  const { signOut } = useClerk();
   const location = useLocation();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -21,11 +18,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">
-      {/* Dashboard Top Navigation */}
       <DashboardNavbar onMenuToggle={() => setIsMobileOpen(!isMobileOpen)} />
 
       <div className="flex flex-1">
-        {/* Mobile Menu Overlay */}
         {isMobileOpen && (
           <div
             className="fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden"
@@ -33,7 +28,6 @@ const Layout = ({ children }) => {
           />
         )}
 
-        {/* Sidebar */}
         <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-white border-r shadow-lg transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:shadow-none ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="p-6 border-b">
             <div className="flex items-center space-x-3">
@@ -55,7 +49,7 @@ const Layout = ({ children }) => {
                 <X size={20} />
               </button>
             </div>
-            <p className="text-xs text-gray-500 mt-1">Welcome, {user?.firstName || "User"}</p>
+            <p className="text-xs text-gray-500 mt-1">Welcome, Demo User</p>
           </div>
           <nav className="p-4 space-y-2">
             {navItems.map((item) => (
@@ -75,16 +69,15 @@ const Layout = ({ children }) => {
             ))}
             <div className="border-t pt-4 mt-8">
               <button
-                onClick={() => signOut()}
+                onClick={() => window.location.href = '/'}
                 className="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg w-full transition-colors"
               >
-                <LogOut size={20} /> Logout
+                <LogOut size={20} /> Back to Home
               </button>
             </div>
           </nav>
         </aside>
 
-        {/* Main Content */}
         <main className="flex-1 overflow-y-auto">
           <div className="p-4 md:p-8">
             {children}

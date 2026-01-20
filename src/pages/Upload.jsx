@@ -305,7 +305,7 @@ const UploadPage = () => {
         
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg"
+          className="w-20 h-20 bg-linear-to-br from-indigo-500 to-purple-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg"
         >
           <UploadCloud size={40} />
         </motion.div>
@@ -319,7 +319,7 @@ const UploadPage = () => {
         
         <button
           onClick={() => fileInputRef.current?.click()}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all font-semibold shadow-lg"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all font-semibold shadow-lg"
         >
           <Plus size={20} />
           Select Files
@@ -395,7 +395,7 @@ const UploadPage = () => {
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <motion.div
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 h-2 rounded-full"
+                  className="bg-linear-to-r from-indigo-600 to-purple-600 h-2 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${uploadProgress}%` }}
                   transition={{ duration: 0.3 }}
@@ -561,7 +561,7 @@ const UploadPage = () => {
                       >
                         <ZoomOut size={20} />
                       </button>
-                      <span className="text-sm text-gray-600 min-w-[60px] text-center">
+                      <span className="text-sm text-gray-600 min-w-60px text-center">
                         {Math.round(imageZoom * 100)}%
                       </span>
                       <button
