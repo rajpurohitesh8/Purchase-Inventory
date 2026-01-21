@@ -220,7 +220,7 @@ const Products = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-linear-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-4"
+          className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-4"
         >
           <div className="flex items-center gap-3">
             <AlertCircle className="text-orange-600" size={24} />
@@ -277,7 +277,7 @@ const Products = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleAddProduct}
-                className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg"
               >
                 <Plus size={18} />
                 Add Product
@@ -560,7 +560,7 @@ const Products = () => {
               className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6 border-b bg-linear-to-r from-indigo-600 to-purple-600 text-white rounded-t-2xl">
+              <div className="p-6 border-b bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-t-2xl">
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-bold">
